@@ -60,7 +60,7 @@ public class Google_existing_user_sign_in extends Set {
 	    Thread.sleep(2000);
 	    next_1.click();
 	    Thread.sleep(2000);
-	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".btn-social.btn-google > Sign in with Google </a> > div:nth-child(1) > input:nth-child(1)")));
+	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)")));
 	    Thread.sleep(2000);
 	    gmail_pass.sendKeys("himanshi@123");
 	    
@@ -101,8 +101,8 @@ public class Google_existing_user_sign_in extends Set {
 	@Then("^logout pld gmail$")
 	public void logout_pld_gmail() throws Throwable {
 	   
-		Thread.sleep(2000);
-	    WebElement my_account_og = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'My Account')]")));
+		Thread.sleep(4000);
+	    WebElement my_account_og = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='collapse navbar-collapse']//ul//li[@id='li_myaccount']//a[contains(.,'My Account')]//i"))
 	    Thread.sleep(2000);
 	   my_account_og.click();
 	    Thread.sleep(2000);
