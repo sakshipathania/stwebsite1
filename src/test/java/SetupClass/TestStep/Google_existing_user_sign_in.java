@@ -60,7 +60,7 @@ public class Google_existing_user_sign_in extends Set {
 	    Thread.sleep(2000);
 	    next_1.click();
 	    Thread.sleep(2000);
-	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("btn btn-block btn-social btn-google social-btn"> Sign in with Google </a> > div:nth-child(1) > input:nth-child(1)")));
+	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("btn btn-block btn-social btn-google social-btn"> div:nth-child(1) > input:nth-child(1)")));
 	    Thread.sleep(2000);
 	    gmail_pass.sendKeys("himanshi@123");
 	    
