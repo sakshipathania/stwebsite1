@@ -59,10 +59,11 @@ public class Google_existing_user_sign_in extends Set {
 	    WebElement next_1 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)")));
 	    Thread.sleep(2000);
 	    next_1.click();
+	    Thread.sleep(4000);
+	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type ='password']")).sendkeys("himashi@123"));
 	    Thread.sleep(2000);
-	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("btn-block btn-social btn-google social-btn > div:nth-child(1) > input:nth-child(1)")));
-	    Thread.sleep(2000);
-	    gmail_pass.sendKeys("himanshi@123");
+	   /* gmail_pass.sendKeys("himanshi@123");
+	   */
 	    
 	    Thread.sleep(2000);
 	    WebElement next_2 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#passwordNext > span:nth-child(3)")));
