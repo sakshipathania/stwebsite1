@@ -103,7 +103,7 @@ public class Google_existing_user_sign_in extends Set {
 	   
 		Thread.sleep(2000);
 	    WebElement my_account_og = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'My Account')]")));
-	    Thread.sleep(2000);
+	    Thread.sleep(6000);
 	   my_account_og.click();
 	    Thread.sleep(2000);
    
