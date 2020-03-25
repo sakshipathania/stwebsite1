@@ -83,9 +83,9 @@ public class Sign_in_existing_free_user extends Set{
 	@Then("^user logout efu\\.$")
 	public void user_logout_efu() throws Throwable {
 	    
-		Thread.sleep(2000);
-	    WebElement my_account = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'My Account')]")));
-	    Thread.sleep(2000);
+		Thread.sleep(8000);
+	    WebElement my_account = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'My Account')]")));
+	    Thread.sleep(4000);
 	   my_account.click();
 	    Thread.sleep(2000);
    
