@@ -51,20 +51,21 @@ public class Google_existing_user_sign_in extends Set {
 
 	@Then("^User click on sign in with google plus button old gmail$")
 	public void user_click_on_sign_in_with_google_plus_button_old_gmail() throws InterruptedException  {
-		Thread.sleep(2000);
-		WebElement gmail_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("identifierId")));
+		Thread.sleep(4000);
+		WebElement gmail_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='identifierId']"));
+	
 		Thread.sleep(2000);
 	    gmail_email.sendKeys("himanshi.sharma@slidetech.in");
 	    Thread.sleep(2000);
 	    WebElement next_1 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#identifierNext > span:nth-child(3) > span:nth-child(1)")));
 	    Thread.sleep(2000);
 	    next_1.click();
-	    Thread.sleep(2000);
-	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".btn-social.btn-google > Sign in with Google </a> > div:nth-child(1) > input:nth-child(1)")));
+	    Thread.sleep(4000);
+	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@name='password']"));
 	    Thread.sleep(2000);
 	    gmail_pass.sendKeys("himanshi@123");
 	    
-	    Thread.sleep(2000);
+	    Thread.sleep(4000);
 	    WebElement next_2 = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#passwordNext > span:nth-child(3)")));
 	    Thread.sleep(2000);
 	    next_2.click();
@@ -101,9 +102,9 @@ public class Google_existing_user_sign_in extends Set {
 	@Then("^logout pld gmail$")
 	public void logout_pld_gmail() throws Throwable {
 	   
-		Thread.sleep(2000);
-	    WebElement my_account_og = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'My Account')]")));
-	    Thread.sleep(2000);
+		Thread.sleep(4000);
+	    WebElement my_account_og = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[href='https://www.slideteam.net/customer/account/']")));
+	    Thread.sleep(3000);
 	   my_account_og.click();
 	    Thread.sleep(2000);
    
