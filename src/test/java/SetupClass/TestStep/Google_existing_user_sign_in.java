@@ -53,6 +53,7 @@ public class Google_existing_user_sign_in extends Set {
 	public void user_click_on_sign_in_with_google_plus_button_old_gmail() throws InterruptedException  {
 		Thread.sleep(2000);
 		WebElement gmail_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("identifierId")));
+		gmail_email.click();
 		Thread.sleep(2000);
 	    gmail_email.sendKeys("himanshi.sharma@slidetech.in");
 	    Thread.sleep(2000);
@@ -101,7 +102,7 @@ public class Google_existing_user_sign_in extends Set {
 	@Then("^logout pld gmail$")
 	public void logout_pld_gmail() throws Throwable {
 	   
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	    WebElement my_account_og = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'My Account')]")));
 	    Thread.sleep(2000);
 	   my_account_og.click();
