@@ -147,9 +147,9 @@ public class co_checkout extends Set{
 		// place order button 
 		
 		 WebElement place_order_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='place-order-trigger']")));
-			Thread.sleep(10000);
+			Thread.sleep(2000);
 		    place_order_btn.click();
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 	}
 
 	@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
