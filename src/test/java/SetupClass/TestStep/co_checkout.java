@@ -146,7 +146,7 @@ public class co_checkout extends Set{
 		Thread.sleep(3000);
 		// place order button 
 		try {
-		 WebElement place_order_btn  = driver.findElement(By.xpath("//*[@id='place-order-trigger']")));
+		 WebElement place_order_btn  = driver.findElement(By.xpath("//*[@id='place-order-trigger']"));
 			Thread.sleep(2000);
 		    place_order_btn.click();
 			Thread.sleep(5000);
