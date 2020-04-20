@@ -150,7 +150,7 @@ public class co_checkout extends Set{
 			Thread.sleep(2000);
 		    place_order_btn.click();
 			Thread.sleep(5000);
-		} catch ( (NoSuchElementException Ext) {
+		} catch (NoSuchElementException Ext) {
 
 		}
 	}
