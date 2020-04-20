@@ -126,13 +126,13 @@ public class co_checkout extends Set{
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
 			Thread.sleep(2000);
 		    join_now_btn.click();
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 
 	}
 
 	@Then("^user is redirected to checkout page (\\d+)CO$")
 	public void user_is_redirected_to_checkout_page_CO(int arg1) throws Throwable {
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 	}
 
 	@Then("^user proceed to pay with (\\d+)CO (\\d+)CO$")
