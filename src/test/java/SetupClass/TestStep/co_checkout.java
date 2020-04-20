@@ -145,11 +145,14 @@ public class co_checkout extends Set{
 	    co_btn.click();
 		Thread.sleep(3000);
 		// place order button 
-		 WebElement place_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(.,'Place Order')]")));
+		try {
+		 WebElement place_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='place-order-trigger']")));
 			Thread.sleep(2000);
 		    place_order_btn.click();
 			Thread.sleep(5000);
-		
+		} catch ( (NoSuchElementException Ext) {
+
+		}
 	}
 
 	@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
