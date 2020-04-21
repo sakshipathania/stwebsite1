@@ -136,20 +136,25 @@ public class co_checkout extends Set{
 	}
 
 	@Then("^user proceed to pay with (\\d+)CO (\\d+)CO$")
-	public void user_proceed_to_pay_with_CO_CO(int arg1, int arg2) throws Throwable {
-	    
+	public void user_proceed_to_pay_with_CO_CO(int arg1, int arg2) throws InterruptedException {
+	     try {
 		Thread.sleep(1400);
 		// select 2co option
 		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='tco_checkout']")));
 		Thread.sleep(2000);
 	         co_btn.click();
 		Thread.sleep(5000);
+	     } catch( NoSuchElementException popup) { 
+	     }
+	
 		// place order button 
-		
+		try {
 		 WebElement place_order_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(.,'Place Order')]")));
 			Thread.sleep(2000);
 		    place_order_btn.click();
 			Thread.sleep(5000);
+		} catch (NoSuchElementException popup) {
+		}
 	}
 
 	@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
