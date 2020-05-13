@@ -155,8 +155,8 @@ public class co_checkout extends Set{
 			
 		 WebElement place_order_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(.,'Place Order')]")));
 			Thread.sleep(2000);
-			js.executeScript("arguments[0].click();", place_order_btn);
-			Thread.sleep(2000);
+			//js.executeScript("arguments[0].click();", place_order_btn);
+			//Thread.sleep(2000);
 		    place_order_btn.click();
 			Thread.sleep(5000);
 		} catch (NoSuchElementException popup) {
