@@ -153,7 +153,7 @@ public class co_checkout extends Set{
 		// place order button 
 		try {
 			
-		 WebElement place_order_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(.,'Place Order')]")));
+		 WebElement place_order_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Place Order')]")));
 			Thread.sleep(2000);
 			//js.executeScript("arguments[0].click();", place_order_btn);
 			//Thread.sleep(2000);
