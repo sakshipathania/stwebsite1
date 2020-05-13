@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,7 +19,8 @@ public class co_checkout extends Set{
 	
 
 	WebDriverWait wait = new WebDriverWait(driver,50);
-
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 	@Given("^user is already on Website Home Page (\\d+)CO$")
 	public void user_is_already_on_Website_Home_Page_CO(int arg1) throws Throwable {
 		
@@ -174,7 +176,10 @@ public class co_checkout extends Set{
 				}
 		// place order button 
 		try {
+			
 		 WebElement place_order_btn  =  driver.findElement(By.xpath("//button[contains(.,'Place Order')]"));
+			Thread.sleep(2000);
+			js.executeScript("arguments[0].click();", place_order_btn);
 			Thread.sleep(2000);
 		    place_order_btn.click();
 			Thread.sleep(5000);
