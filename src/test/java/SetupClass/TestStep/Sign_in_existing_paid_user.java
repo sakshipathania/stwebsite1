@@ -67,7 +67,8 @@ public void user_navigate_to_complete_deck_from_account_dashboard_page() throws 
 	  //Thread.sleep(2000);   
 	 //select_product.click();
 	    //Thread.sleep(2000);
-	    
+	    driver.get("https://www.slideteam.net/business-process-evaluation-powerpoint-show.html");
+	Thread.sleep(4000);
 }
 
 @Then("^user download any product$")
