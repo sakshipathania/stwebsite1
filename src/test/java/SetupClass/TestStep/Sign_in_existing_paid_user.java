@@ -73,7 +73,7 @@ public void user_navigate_to_complete_deck_from_account_dashboard_page() throws 
 @Then("^user download any product$")
 public void user_download_any_product() throws InterruptedException  {
     
-	WebElement download_btn=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#clicking")));
+	WebElement download_btn=driver.findElement(By.cssSelector("#clicking"));
     Thread.sleep(2000);
     download_btn.click();
     Thread.sleep(2000);
