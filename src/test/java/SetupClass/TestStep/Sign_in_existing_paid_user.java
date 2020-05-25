@@ -63,10 +63,10 @@ public void user_navigate_to_complete_deck_from_account_dashboard_page() throws 
 	 driver.get("https://www.slideteam.net/complete-powerpoint-decks-presentations/all-powerpoint-complete-decks.html");
 	 Thread.sleep(3000);
 	 
-	 WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
-	  Thread.sleep(2000);   
-	 select_product.click();
-	    Thread.sleep(2000);
+	// WebElement select_product=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.product:nth-child(1) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")));
+	  //Thread.sleep(2000);   
+	 //select_product.click();
+	    //Thread.sleep(2000);
 	    
 }
 
