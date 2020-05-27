@@ -148,20 +148,7 @@ public class co_checkout extends Set{
 		Thread.sleep(5000);
 	     } catch( NoSuchElementException popup) { 
 	     }
-	
-		
-		// place order button 
-		try {
-			
-		 WebElement place_order_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Place Order')]")));
-			Thread.sleep(2000);
-			//js.executeScript("arguments[0].click();", place_order_btn);
-			//Thread.sleep(2000);
-		    place_order_btn.click();
-			Thread.sleep(5000);
-		} catch (NoSuchElementException popup) {
-		}
-		try {
+	      try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
 				driver.switchTo().frame(iframe);   
@@ -183,9 +170,22 @@ public class co_checkout extends Set{
 			System.out.println("chat window does not open");
 			}
 		}
-				catch(NoSuchElementException NCP) {
+				catch(NoSuchElementException NP) {
 					
 				}
+		
+		// place order button 
+		try {
+			
+		 WebElement place_order_btn  =  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Place Order')]")));
+			Thread.sleep(2000);
+			//js.executeScript("arguments[0].click();", place_order_btn);
+			//Thread.sleep(2000);
+		    place_order_btn.click();
+			Thread.sleep(5000);
+		} catch (NoSuchElementException popup) {
+		}
+		
 		
 	}
 
