@@ -169,7 +169,7 @@ public class co_checkout extends Set{
 	     try {
 		Thread.sleep(1400);
 		// select 2co option
-		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='tco_checkout']")));
+		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='tco_checkout']")));
 		Thread.sleep(2000);
 	         co_btn.click();
 		Thread.sleep(5000);
@@ -179,7 +179,7 @@ public class co_checkout extends Set{
 		// place order button 
 		try {
 			
-		 WebElement place_order_btn  =  driver.findElement(By.xpath("//span[contains(text(),'Place Order')]"));
+		 WebElement place_order_btn  =  driver.findElement(By.xpath("//*[@id='place-order-trigger']"));
 			Thread.sleep(2000);
 			js.executeScript("arguments[0].click();", place_order_btn);
 			Thread.sleep(2000);
