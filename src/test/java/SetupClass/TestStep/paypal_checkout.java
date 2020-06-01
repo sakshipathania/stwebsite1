@@ -18,8 +18,8 @@ import cucumber.api.java.en.Then;
 public class paypal_checkout extends Set {
 	
 	WebDriverWait wait = new WebDriverWait(driver,10);
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-       
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 	@Given("^user is already on Website Home Page pp$")
 	public void user_is_already_on_Website_Home_Page_pp() throws Throwable {
 		
@@ -39,6 +39,31 @@ public class paypal_checkout extends Set {
 
 		}
 	    Thread.sleep(1000);
+		try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+				
+
+			System.out.println("chat window does not open");
+			}
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
 	    
 	}
 
@@ -128,7 +153,8 @@ public class paypal_checkout extends Set {
 	   
 		// choose a plan
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[3]//div[3]//span[1]//form[1]//button[1]//span[1]")));
-			Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();",join_now_btn);	
+		Thread.sleep(2000);
 		    join_now_btn.click();
 			Thread.sleep(5000);
 
@@ -159,7 +185,7 @@ public class paypal_checkout extends Set {
 		try
 		{
 			  WebElement place_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Place Order')]")));
-			  js.executeScript("arguments[0].scrollIntoView();",place_order_btn);
+			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);	
 			Thread.sleep(3000);
 		          place_order_btn.click();
 			  Thread.sleep(5000);
@@ -243,16 +269,46 @@ public class paypal_checkout extends Set {
 		
 
 		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
-		//js.executeScript("arguments[0].scrollIntoView();",delete_account);
 		 Thread.sleep(3000);
 		 
+		
+
+
+try {
+			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
+			if(iframe.isDisplayed()) {
+				driver.switchTo().frame(iframe);   
+				 Actions act = new Actions(driver);
+				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
+				 Thread.sleep(2000);
+					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
+					 Thread.sleep(1000);
+						chat1.click();
+						 Thread.sleep(1000);
+						 driver.switchTo().defaultContent();
+						 Thread.sleep(1000);
+						 driver.switchTo().parentFrame();
+					 Thread.sleep(1000);
+			}
+			else {
+				
+
+			System.out.println("chat window does not open");
+			}
+		}
+				catch(NoSuchElementException NCP) {
+					
+				}
+
+
+
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
 		js.executeScript("arguments[0].scrollIntoView();",delete_account);
-		delete_account.click();
+		 delete_account.click();
 		 Thread.sleep(3000);
-		 WebElement continue_delete = driver.findElement(By.xpath("//button[@type='submit'][contains(.,'Continue')]"));
-		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
-		 continue_delete.click();
+		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
+		js.executeScript("arguments[0].scrollIntoView();",continue_delete); 
+		continue_delete.click();
 		 Thread.sleep(3000);
 		
 	}
