@@ -18,7 +18,7 @@ import cucumber.api.java.en.Then;
 public class co_checkout extends Set{
 	
 
-	WebDriverWait wait = new WebDriverWait(driver,50);
+	WebDriverWait wait = new WebDriverWait(driver,10);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on Website Home Page (\\d+)CO$")
@@ -153,7 +153,8 @@ public class co_checkout extends Set{
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_CO(int arg1) throws Throwable {
 		// choose a plan
 		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[contains(.,'Join now')])[8]")));
-			Thread.sleep(2000);
+		js.executeScript("arguments[0].scrollIntoView();",join_now_btn);	
+		Thread.sleep(2000);
 		    join_now_btn.click();
 			Thread.sleep(6000);
 
@@ -181,6 +182,7 @@ public class co_checkout extends Set{
 			
 		 WebElement place_order_btn  =  driver.findElement(By.cssSelector("#place-order-trigger > span"));
 			Thread.sleep(2000);
+			js.executeScript("arguments[0].scrollIntoView();"place_order_btn);
 			//js.executeScript("arguments[0].click();", place_order_btn);
 			Thread.sleep(2000);
 		    place_order_btn.click();
@@ -254,10 +256,12 @@ try {
 
 
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
+		js.executeScript("arguments[0].scrollIntoView();",delete_account);
 		 delete_account.click();
 		 Thread.sleep(3000);
 		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
-		 continue_delete.click();
+		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
+		continue_delete.click();
 		 Thread.sleep(3000);
 	}
 
