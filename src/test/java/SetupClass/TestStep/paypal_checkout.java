@@ -209,11 +209,11 @@ public class paypal_checkout extends Set {
 		   if(!handle.equals(currentWindow)){
 		    
 		    popupWindowHandle = handle;
-		    
+		     driver.switchTo().window(popupWindowHandle);
 		   }
 		  }
 		  
-		  driver.switchTo().window(popupWindowHandle);
+		 
 		  
 		// page title
 		  String pp_page_title=driver.getTitle();
