@@ -182,7 +182,7 @@ public class co_checkout extends Set{
 			
 		 WebElement place_order_btn  =  driver.findElement(By.cssSelector("#place-order-trigger > span"));
 			Thread.sleep(2000);
-			js.executeScript("arguments[0].scrollIntoView();"place_order_btn);
+			js.executeScript("arguments[0].scrollIntoView();",place_order_btn);
 			//js.executeScript("arguments[0].click();", place_order_btn);
 			Thread.sleep(2000);
 		    place_order_btn.click();
