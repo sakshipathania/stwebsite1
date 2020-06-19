@@ -69,7 +69,7 @@ public class Google_new_user_sign_up extends Set {
 	    gmail_pass.sendKeys("Himanshi@123");
 	    Thread.sleep(2000);
 	    
-	    WebElement next_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='submit']")));
+	    WebElement next_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/span/span")));
 	    Thread.sleep(2000);
 	    next_2.click();
 	}
