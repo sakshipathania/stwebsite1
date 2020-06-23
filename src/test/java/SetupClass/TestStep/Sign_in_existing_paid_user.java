@@ -43,10 +43,10 @@ public void user_is_already_on_sign_in_page_epu() throws InterruptedException  {
 @Then("^user enter email and password epu$")
 public void user_enter_email_and_password_epu() throws InterruptedException  {
     
-	WebElement old_paid_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
+	WebElement old_paid_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='email']")));
     old_paid_email.sendKeys("sakshi.pathania@slidetech.in");
     
-    WebElement old_paid_pass = wait.until(ExpectedConditions.elementToBeClickable(By.id("pass")));
+    WebElement old_paid_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pass']")));
     old_paid_pass.sendKeys("Qwerty@1");
 }
 
