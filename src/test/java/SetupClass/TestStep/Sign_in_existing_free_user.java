@@ -37,11 +37,11 @@ public class Sign_in_existing_free_user extends Set{
 	public void user_enter_email_and_password_efu() throws InterruptedException  {
 		
 		Thread.sleep(1000);
-		WebElement old_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='email']")));
+		WebElement old_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[2]/div[2]/form/fieldset/div[2]/div/input")));
 		Thread.sleep(1000);
 	    old_email.sendKeys("himanshi@test.com");
 	    Thread.sleep(1000);
-	    WebElement old_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pass']")));
+	    WebElement old_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/main/div[2]/div/div[2]/div[2]/div[2]/form/fieldset/div[3]/div/input")));
 	    Thread.sleep(1000);
 	    old_pass.sendKeys("123456");
 	    Thread.sleep(1000);
