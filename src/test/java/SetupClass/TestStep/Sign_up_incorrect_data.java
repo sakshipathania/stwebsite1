@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
@@ -17,6 +18,7 @@ import cucumber.api.java.en.Then;
 public class Sign_up_incorrect_data extends Set{
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on sign up page$")
 	public void user_is_already_on_sign_up_page() throws InterruptedException  {
@@ -225,7 +227,9 @@ public class Sign_up_incorrect_data extends Set{
 		//driver.findElement(By.xpath("//a[@class='product-item-link name-trim'][contains(.,'Information Technology Gantt Chart')]")).click();
 		driver.get("https://www.slideteam.net/bar-graphs-and-histograms-success-powerpoint-templates-themes.html");
 		Thread.sleep(3000);
-		driver.findElement(By.cssSelector("#clicking")).click();
+		WebElement Downl_oad= driver.findElement(By.cssSelector("#clicking"));
+		js.executeScript("arguments[0].scrollIntoView();",Downl_oad);	
+		Downl_oad.click();
 		Thread.sleep(3000);
 	   
 	}
