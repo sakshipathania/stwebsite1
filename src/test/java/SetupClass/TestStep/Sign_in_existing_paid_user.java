@@ -8,6 +8,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
@@ -16,6 +17,8 @@ import cucumber.api.java.en.Then;
 public class Sign_in_existing_paid_user extends Set {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	
 
 
 @Given("^user is already on sign in page epu$")
@@ -74,7 +77,9 @@ public void user_navigate_to_complete_deck_from_account_dashboard_page() throws 
 @Then("^user download any product$")
 public void user_download_any_product() throws InterruptedException  {
     
+	
 	WebElement download_btn=driver.findElement(By.xpath("//*[@id='clicking']"));
+	js.executeScript("arguments[0].scrollIntoView();",download_btn);
     Thread.sleep(2000);
     download_btn.click();
     Thread.sleep(2000);
