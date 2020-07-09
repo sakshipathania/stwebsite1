@@ -15,7 +15,7 @@ import cucumber.api.java.en.Then;
 
 public class Google_new_user_sign_up extends Set {
 	
-	WebDriverWait wait = new WebDriverWait(driver,50);
+	WebDriverWait wait = new WebDriverWait(driver,60);
 	
 	
 	@Given("^user is already on Home Page new google$")
