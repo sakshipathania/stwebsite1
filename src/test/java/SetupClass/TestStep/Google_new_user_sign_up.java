@@ -60,7 +60,7 @@ public class Google_new_user_sign_up extends Set {
 		Thread.sleep(2000);
 	    gmail_email.sendKeys("slidetech.qa@gmail.com");
 	    Thread.sleep(2000);
-	    WebElement next_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("#identifierNext > div > button > div.VfPpkd-RLmnJb")));
+	    WebElement next_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("#identifierNext > span:nth-child(3) > span:nth-child(1)")));
 	    Thread.sleep(2000);
 	    next_1.click();
 	    Thread.sleep(2000);
@@ -69,7 +69,7 @@ public class Google_new_user_sign_up extends Set {
 	    gmail_pass.sendKeys("Himanshi@123");
 	    Thread.sleep(2000);
 	    
-	    WebElement next_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("#passwordNext > div > button > div.VfPpkd-RLmnJb")));
+	    WebElement next_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("#passwordNext > span:nth-child(3)")));
 	    Thread.sleep(2000);
 	    next_2.click();
 	}
