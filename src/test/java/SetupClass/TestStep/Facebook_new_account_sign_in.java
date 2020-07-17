@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
@@ -16,6 +17,7 @@ import cucumber.api.java.en.Then;
 public class Facebook_new_account_sign_in extends Set {
 	
 	WebDriverWait wait = new WebDriverWait(driver,50);
+	 JavascriptExecutor js = (JavascriptExecutor) driver;
 
 
 	@Given("^user is already on Home Page new fb$")
@@ -99,13 +101,10 @@ public class Facebook_new_account_sign_in extends Set {
 		 driver.get("https://www.slideteam.net/");
 		   Thread.sleep(3000);
 		   
-		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		  driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
 		 Thread.sleep(3000);
 		 
-		 
-		 driver.findElement(By.xpath("//a[contains(.,'Delete Account')]")).click();
-		 Thread.sleep(3000);
-		 
+		
 
 
 try {
@@ -135,11 +134,13 @@ try {
 				}
 
         
+		 WebElement delete_account = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/main/div/div[2]/div[2]/div[2]/ul/li/a")));
+		js.executeScript("arguments[0].scrollIntoView();",delete_account);
+		 delete_account.click();
 		 Thread.sleep(3000);
-		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"deleteaccount-form\"]/button[1]")));
-		 Thread.sleep(2000);
-
-		 continue_delete.click();
+		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[2]/div/div[1]/div/div[2]/form/button[1]")));
+		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
+		continue_delete.click();
 		 Thread.sleep(3000);
 	}
 
