@@ -7,6 +7,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
@@ -14,6 +15,7 @@ import cucumber.api.java.en.Then;
 
 public class Sign_in_existing_free_user extends Set{
 	WebDriverWait wait = new WebDriverWait(driver,50);
+	 JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on sign in page efu$")
 	public void user_is_already_on_sign_in_page_efu() throws InterruptedException  {
@@ -37,11 +39,11 @@ public class Sign_in_existing_free_user extends Set{
 	public void user_enter_email_and_password_efu() throws InterruptedException  {
 		
 		Thread.sleep(1000);
-		WebElement old_email = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#email")));
+		WebElement old_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='email']")));
 		Thread.sleep(1000);
 	    old_email.sendKeys("himanshi@test.com");
 	    Thread.sleep(1000);
-	    WebElement old_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#pass")));
+	    WebElement old_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pass']")));
 	    Thread.sleep(1000);
 	    old_pass.sendKeys("123456");
 	    Thread.sleep(1000);
