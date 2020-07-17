@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
@@ -16,6 +17,7 @@ import cucumber.api.java.en.Then;
 
 public class sign_up_correct_data extends Set {
 	WebDriverWait wait = new WebDriverWait(driver,50);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	@Given("^user is already on sign up page cd$")
 	public void user_is_already_on_sign_up_page_cd() throws InterruptedException  {
@@ -150,7 +152,9 @@ public class sign_up_correct_data extends Set {
 	public void user_download_a_free_product_cd() throws InterruptedException  {
 		driver.findElement(By.cssSelector("li.item:nth-child(8) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.cssSelector("#clicking")).click();
+		WebElement Download= driver.findElement(By.cssSelector("#clicking"));
+		js.executeScript("arguments[0].scrollIntoView();",Download);
+		Download.click();
 		Thread.sleep(3000);
 	   driver.get("https://www.slideteam.net/");
 	   Thread.sleep(3000);
