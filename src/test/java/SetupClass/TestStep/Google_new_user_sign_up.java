@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import SetupClass.Set;
 import cucumber.api.java.en.Given;
@@ -16,6 +17,7 @@ import cucumber.api.java.en.Then;
 public class Google_new_user_sign_up extends Set {
 	
 	WebDriverWait wait = new WebDriverWait(driver,60);
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	
 	@Given("^user is already on Home Page new google$")
@@ -121,10 +123,6 @@ public class Google_new_user_sign_up extends Set {
 		 driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
 		 Thread.sleep(3000);
 		 
-		 
-		 driver.findElement(By.xpath("//a[contains(.,'Delete Account')]")).click();
-		 Thread.sleep(3000);
-		 
 
 
 try {
@@ -154,10 +152,12 @@ try {
 				}
 
      
+		 WebElement delete_account =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Delete Account')]")));
+		js.executeScript("arguments[0].scrollIntoView();",delete_account);
+		 delete_account.click();
 		 Thread.sleep(3000);
-		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"deleteaccount-form\"]/button[1]")));
-		 Thread.sleep(2000);
-
+		 WebElement continue_delete =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
+		js.executeScript("arguments[0].scrollIntoView();",continue_delete); 
 		 continue_delete.click();
 		 Thread.sleep(3000);
 		
