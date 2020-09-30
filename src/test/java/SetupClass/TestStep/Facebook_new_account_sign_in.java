@@ -72,10 +72,15 @@ public class Facebook_new_account_sign_in extends Set {
 
 	@Then("^user go to free ppts page new fb$")
 	public void user_go_to_free_ppts_page_new_fb() throws InterruptedException  {
-		WebElement free_ppt_btn=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.menu-item:nth-child(2) > a:nth-child(1)")));
-		Thread.sleep(2000);
+		//WebElement free_ppt_btn=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("li.menu-item:nth-child(2) > a:nth-child(1)")));
+		//Thread.sleep(2000);
 
-	    free_ppt_btn.click();
+	   // free_ppt_btn.click();
+		Thread.sleep(5000);
+		Actions actions = new Actions(driver);
+		WebElement free_ppt_btn1=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Free Stuff")));
+		actions.moveToElement(free_ppt_btn1).moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Free PPTs')]"))).click().build().perform();
+		Thread.sleep(7000);
 	
 	}
 	    
