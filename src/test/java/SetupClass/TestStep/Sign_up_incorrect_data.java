@@ -216,10 +216,16 @@ public class Sign_up_incorrect_data extends Set{
 	@Then("^user go to free ppts page$")
 	public void user_go_to_free_ppts_page() throws InterruptedException  {
 	   
-		Thread.sleep(2000);
+		/*Thread.sleep(2000);
 		WebElement free_ppt_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'Free PPTs')]")));
 		Thread.sleep(2000);
-	    free_ppt_btn.click();
+	    free_ppt_btn.click();*/
+		
+		Thread.sleep(5000);
+		Actions actions = new Actions(driver);
+		WebElement free_ppt_btn1=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Free Stuff")));
+		actions.moveToElement(free_ppt_btn1).moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Free PPTs')]"))).click().build().perform();
+		Thread.sleep(7000);
 	}
 
 	@Then("^user download a free product$")
