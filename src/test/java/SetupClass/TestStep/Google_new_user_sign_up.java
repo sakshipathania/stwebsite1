@@ -79,11 +79,17 @@ public class Google_new_user_sign_up extends Set {
 	@Then("^user go to free ppts page new google$")
 	public void user_go_to_free_ppts_page_new_google() throws InterruptedException  {
 		
-		Thread.sleep(3000);
+		/*Thread.sleep(3000);
 		WebElement free_ppt_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Free PPTs')]")));
 		Thread.sleep(2000);
 	    free_ppt_btn.click();
-	    Thread.sleep(5000);
+	    Thread.sleep(5000);*/
+		
+		Thread.sleep(5000);
+		Actions actions = new Actions(driver);
+		WebElement free_ppt_btn1=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Free Stuff")));
+		actions.moveToElement(free_ppt_btn1).moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Free PPTs')]"))).click().build().perform();
+		Thread.sleep(7000);
 		
 	}
 
