@@ -63,7 +63,7 @@ public class Facebook_new_account_sign_in extends Set {
 		    fb_pass.sendKeys("vrushali@786");
 			Thread.sleep(2000);
 
-		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Log In)]")));
+		    WebElement fb_login_btn=wait.until(ExpectedConditions.elementToBeClickable(By.id("loginbutton")));
 			Thread.sleep(2000);
 		    fb_login_btn.click();
 			Thread.sleep(2000);
