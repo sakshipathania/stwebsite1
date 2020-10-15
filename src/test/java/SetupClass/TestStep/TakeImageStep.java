@@ -1,14 +1,14 @@
-package TestRunner.loginSteps;
+package SetupClass.TestStep;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import TestRunner.SetupClass;
+import SetupClass.Set;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 
 
-	public class TakeImageStep extends SetupClass {
+	public class TakeImageStep extends Set {
 		@After
 		public void tearDown(Scenario scenario) {
 		    if (scenario.isFailed()) {	    	
