@@ -33,9 +33,9 @@ public class Google_new_user_sign_up extends Set {
 		try {
 			// click on sign in with google button on home page
 			//driver.findElement(By.xpath("//a[contains(text(),'Sign in with Google')]")).click();
-			driver.findElement(By.className("btn btn-block btn-social btn-google social-btn")).click();
-			Thread.sleep(1000);
-			driver.findElement(By.className("btn btn-block btn-social btn-google social-btn")).click();
+			//driver.findElement(By.className("btn btn-block btn-social btn-google social-btn")).click();
+			//Thread.sleep(1000);
+			driver.get("https://mail.google.com");
 			Thread.sleep(1000);
 			log.info("It's opening the website URL");
 		} 
