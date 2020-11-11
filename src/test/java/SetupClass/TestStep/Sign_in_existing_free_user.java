@@ -42,11 +42,11 @@ public class Sign_in_existing_free_user extends Set{
 		Thread.sleep(1000);
 		WebElement old_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='email']")));
 		Thread.sleep(1000);
-	    old_email.sendKeys("himanshi@test.com");
+	    old_email.sendKeys("Qwerty120@gmail.com");
 	    Thread.sleep(1000);
 	    WebElement old_pass = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pass']")));
 	    Thread.sleep(1000);
-	    old_pass.sendKeys("123456");
+	    old_pass.sendKeys("Qwerty@1");
 	    Thread.sleep(1000);
 	    
 	   
