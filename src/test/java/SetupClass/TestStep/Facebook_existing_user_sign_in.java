@@ -96,7 +96,7 @@ public class Facebook_existing_user_sign_in extends Set{
 		Thread.sleep(3000);
 		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp);	
 		Thread.sleep(2000);
-		download_btn_pdp.click()
+		download_btn_pdp.click();
 				Thread.sleep(2000);
 		driver.navigate().refresh();
 		
