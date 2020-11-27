@@ -92,9 +92,12 @@ public class Facebook_existing_user_sign_in extends Set{
 		Thread.sleep(3000);
 		
 		
-		driver.findElement(By.cssSelector("#clicking")).click();
+		WebElement download_btn_pdp = driver.findElement(By.cssSelector("#clicking"));
 		Thread.sleep(3000);
-		
+		js.executeScript("arguments[0].scrollIntoView();",download_btn_pdp);	
+		Thread.sleep(2000);
+		download_btn_pdp.click()
+				Thread.sleep(2000);
 		driver.navigate().refresh();
 		
 		// logout
