@@ -70,7 +70,7 @@ public class Google_new_user_sign_up extends Set {
 	    Thread.sleep(2000);
 	    next_1.click();
 	    Thread.sleep(2000);
-	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".I0VJ4d > div:nth-child(1) > input:nth-child(1)")));
+	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")));
 	    Thread.sleep(2000);
 	    gmail_pass.sendKeys("Himanshi@123");
 	    Thread.sleep(2000);
