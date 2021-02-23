@@ -226,6 +226,6 @@ public class sign_up_correct_data extends Set {
 
 		}
 
-
+	}
 	
 }
