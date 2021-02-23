@@ -177,7 +177,7 @@ public class sign_up_correct_data extends Set {
 		
 
 
-try {
+/*try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
 				driver.switchTo().frame(iframe);   
@@ -213,7 +213,18 @@ try {
 		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
 		 continue_delete.click();
 		 Thread.sleep(3000);
-	}
+	}*//
+		try {
+			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
+			if (logout.isEnabled()) {
+				logout.click();
+				Thread.sleep(8000);
+				driver.navigate().refresh();
+				Thread.sleep(2000);
+			}
+		} catch (NoSuchElementException Ext) {
+
+		}
 
 
 	
