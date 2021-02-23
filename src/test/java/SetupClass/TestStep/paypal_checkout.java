@@ -325,5 +325,5 @@ public class paypal_checkout extends Set {
 
 		}
 
-
+	}
 }
