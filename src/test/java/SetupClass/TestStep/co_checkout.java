@@ -280,5 +280,5 @@ public class co_checkout extends Set{
 		}
 
 
-	
+	}
 }
