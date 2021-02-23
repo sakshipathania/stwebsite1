@@ -222,6 +222,7 @@ public class sign_up_correct_data extends Set {
 				driver.navigate().refresh();
 				Thread.sleep(2000);
 			}
+		}
 		 catch (NoSuchElementException Ext) {
 
 		}
