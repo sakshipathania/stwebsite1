@@ -173,6 +173,6 @@ public class Facebook_new_account_sign_in extends Set {
 		} catch (NoSuchElementException Ext) {
 
 		}
-
+	}
 	
 }
