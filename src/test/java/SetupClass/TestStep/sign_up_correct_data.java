@@ -213,7 +213,7 @@ public class sign_up_correct_data extends Set {
 		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
 		 continue_delete.click();
 		 Thread.sleep(3000);
-	}*//
+	}*/
 		try {
 			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
 			if (logout.isEnabled()) {
@@ -222,7 +222,7 @@ public class sign_up_correct_data extends Set {
 				driver.navigate().refresh();
 				Thread.sleep(2000);
 			}
-		} catch (NoSuchElementException Ext) {
+		 catch (NoSuchElementException Ext) {
 
 		}
 
