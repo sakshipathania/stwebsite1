@@ -219,18 +219,18 @@ public class co_checkout extends Set{
 
 	@Then("^user deleted the account (\\d+)CO$")
 	public void user_deleted_the_account_CO(int arg1) throws Throwable {
-		Thread.sleep(3000);
+			Thread.sleep(3000);
 	    driver.get("https://www.slideteam.net/");
 		Thread.sleep(2000);
 		
 
-		 driver.findElement(By.cssSelector("ul.header > li:nth-child(1) > a:nth-child(1)")).click();
+		driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
 		 Thread.sleep(3000);
 		 
 		
 
 
-/*try {
+try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
 				driver.switchTo().frame(iframe);   
@@ -257,28 +257,24 @@ public class co_checkout extends Set{
 				}
 
 
-
+      
 		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
 		js.executeScript("arguments[0].scrollIntoView();",delete_account);
 		 delete_account.click();
 		 Thread.sleep(3000);
-		 WebElement continue_delete = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit'][contains(.,'Continue')]")));
-		js.executeScript("arguments[0].scrollIntoView();",continue_delete);
-		continue_delete.click();
+		WebElement delete_reason = driver.findElement(By.cssSelector("#exampleRadios1"));
+		Thread.sleep(3000);
+		delete_reason.click();
+		Thread.sleep(3000);
+		
+		 WebElement delete_profile = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#delete-final")));
+		js.executeScript("arguments[0].scrollIntoView();",delete_profile);
+		delete_profile.click();
 		 Thread.sleep(3000);
-	}*/
-		try {
-			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
-			if (logout.isEnabled()) {
-				logout.click();
-				Thread.sleep(8000);
-				driver.navigate().refresh();
-				Thread.sleep(2000);
-			}
-		} catch (NoSuchElementException Ext) {
-
-		}
-
-
+		
+		WebElement delete_profile_coupon = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#flipModal > div > div > div.modal-footer.button_action > button.btn.btn-default.button_2")));
+		js.executeScript("arguments[0].scrollIntoView();",delete_profile_coupon);
+		delete_profile_coupon.click();
+		 Thread.sleep(3000);
 	}
 }
