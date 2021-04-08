@@ -224,7 +224,7 @@ public class co_checkout extends Set{
 		Thread.sleep(2000);
 		
 
-		driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		/*driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
 		 Thread.sleep(3000);
 		 
 		
@@ -275,6 +275,17 @@ try {
 		WebElement delete_profile_coupon = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#flipModal > div > div > div.modal-footer.button_action > button.btn.btn-default.button_2")));
 		js.executeScript("arguments[0].scrollIntoView();",delete_profile_coupon);
 		delete_profile_coupon.click();
-		 Thread.sleep(3000);
+		 Thread.sleep(3000);*/
+		
+		try {
+			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
+			if (logout.isEnabled()) {
+				logout.click();
+				Thread.sleep(8000);
+				driver.navigate().refresh();
+				Thread.sleep(2000);
+			}
+		} catch (NoSuchElementException Ext) {
+		}
 	}
 }
