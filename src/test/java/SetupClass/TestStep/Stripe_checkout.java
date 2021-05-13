@@ -190,7 +190,7 @@ public class Stripe_checkout extends Set{
 		Thread.sleep(5000);
 		
 		
-		WebElement Stripe_card  = wait.until(ExpectedConditions.elementToBeClickable(By.className("InputElement is-empty Input Input--empty")));
+		WebElement Stripe_card  =  driver.findElement(By.className("InputElement is-empty Input Input--empty"));
 		Thread.sleep(2000);
 	         Stripe_card.sendKeys("4242424242424242");
 		Thread.sleep(5000);
