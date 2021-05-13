@@ -211,7 +211,7 @@ public class Stripe_checkout extends Set{
 			
 			WebElement error_message= driver.findElement(By.cssSelector("#checkout > div.messages > div > div"));
 								     Thread.sleep(3000);
-			system.out.print("Please verify your Card details");
+			System.out.println("Please verify your Card details");
 								     Thread.sleep(2000);
 								  
 		} catch (NoSuchElementException popup) {
