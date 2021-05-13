@@ -187,13 +187,13 @@ public class Stripe_checkout extends Set{
 		
 		WebElement Stripe_email  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#stripe-email")));
 		Thread.sleep(2000);
-	         Stripe_name.sendKeys("sakshi.pathania@slidetech.in);
+	         Stripe_email.sendKeys("sakshi.pathania@slidetech.in);
 		Thread.sleep(5000);
 		
 		
-		WebElement Stripe_card  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#stripe-name")));
+		WebElement Stripe_card  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#root > form > div > div.CardField-input-wrapper.is-ready-to-slide > span.CardField-number.CardField-child > span:nth-child(2) > div > div.CardNumberField-input-wrapper > span > input")));
 		Thread.sleep(2000);
-	         Stripe_name.sendKeys('4242424242424242");
+	         Stripe_card.sendKeys('4242424242424242");
 		Thread.sleep(5000);
 		
                 
