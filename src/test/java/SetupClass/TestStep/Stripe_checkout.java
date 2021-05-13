@@ -208,6 +208,12 @@ public class Stripe_checkout extends Set{
 			Thread.sleep(2000);
 		    place_order_btn.click();
 			Thread.sleep(5000);
+			
+			WebElement error_message= driver.fineElement(By.cssSelector("#checkout > div.messages > div > div");
+								     Thread.sleep(3000);
+			system.out.print("Please verify your Card details");
+								     Thread.sleep(2000);
+								  
 		} catch (NoSuchElementException popup) {
 		}
 		
