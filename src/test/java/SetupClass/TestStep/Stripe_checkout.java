@@ -177,8 +177,7 @@ public class Stripe_checkout extends Set{
 		Thread.sleep(2000);
 	         co_btn.click();
 		Thread.sleep(5000);
-	     } catch( NoSuchElementException popup) { 
-	     }
+	   
 		WebElement Stripe_name  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#stripe-name")));
 		Thread.sleep(2000);
 	         Stripe_name.sendKeys("QA");
@@ -187,7 +186,7 @@ public class Stripe_checkout extends Set{
 		
 		WebElement Stripe_email  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#stripe-email")));
 		Thread.sleep(2000);
-	         Stripe_email.sendKeys("sakshi.pathania@slidetech.in);
+	         Stripe_email.sendKeys("sakshi.pathania@slidetech.in");
 		Thread.sleep(5000);
 		
 		
@@ -195,7 +194,8 @@ public class Stripe_checkout extends Set{
 		Thread.sleep(2000);
 	         Stripe_card.sendKeys('4242424242424242");
 		Thread.sleep(5000);
-		
+		  } catch( NoSuchElementException popup) { 
+	     }
                 
 		// place order button 
 		try {
