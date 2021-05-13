@@ -190,13 +190,14 @@ public class Stripe_checkout extends Set{
 		Thread.sleep(5000);
 		
 		
-		WebElement Stripe_card  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/form/div/div[2]/span[1]/span[2]/div/div[2]/span/input")));
+		WebElement Stripe_card  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#root > form > div > div.CardField-input-wrapper.is-ready-to-slide > span.CardField-number.CardField-child > span:nth-child(2) > div > div.CardNumberField-input-wrapper > span > input")));
 		Thread.sleep(2000);
 	         Stripe_card.sendKeys("4242424242424242");
 		Thread.sleep(5000);
+		     Stripe_card.clear();
 		  } catch( NoSuchElementException popup) { 
 	     }
-                
+                Thread.sleep(5000);
 		// place order button 
 		try {
 			
@@ -213,35 +214,16 @@ public class Stripe_checkout extends Set{
 		
 	}
 
-	/*@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
-	public void paypal_popup_appears_and_user_navigates_back_to_my_account_CO(int arg1) throws Throwable {
-	    String co_page_title=driver.getTitle();
-		Thread.sleep(3000);
-	    System.out.println("Title of the Page is --> "+co_page_title);
-	    
-	    String page_title="2Checkout";
-	    
-	    if(page_title.equalsIgnoreCase(co_page_title))
-	    {
-	    	System.out.println(" user is on the 2checkout page");
-	    	log.info("USER IS ON THE 2CHECKOUT PAGE");
-	    }
-	    else
-	    {
-	    	System.out.println("user is on the wrong page");
-	    	log.info("USER IS ON THE WRONG PAGE");
-	    }
-		Thread.sleep(3000);
-	}*/
+	
 
 	@Then("^user deleted the account (\\d+)CO$")
 	public void user_deleted_the_account_CO(int arg1) throws Throwable {
 			Thread.sleep(3000);
-	  //  driver.get("https://www.slideteam.net/");
-	//	Thread.sleep(2000);
-		
 
-		driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		
+		 WebElement account = driver.findElement(By.xpath("//a[contains(.,'My Account')]"))
+			  Thread.sleep(3000);
+			account.click();
 		 Thread.sleep(3000);
 		 
 		
