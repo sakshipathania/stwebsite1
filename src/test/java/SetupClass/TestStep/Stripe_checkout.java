@@ -190,7 +190,7 @@ public class Stripe_checkout extends Set{
 		Thread.sleep(5000);
 		
 		
-		WebElement Stripe_card  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#root > form > div > div.CardField-input-wrapper.is-ready-to-slide > span.CardField-number.CardField-child > span:nth-child(2) > div > div.CardNumberField-input-wrapper > span > input")));
+		WebElement Stripe_card  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/form/div/div[2]/span[1]/span[2]/div/div[2]/span/input")));
 		Thread.sleep(2000);
 	         Stripe_card.sendKeys("4242424242424242");
 		Thread.sleep(5000);
@@ -246,36 +246,7 @@ public class Stripe_checkout extends Set{
 		 
 		
 
-
-/*try {
-			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
-			if(iframe.isDisplayed()) {
-				driver.switchTo().frame(iframe);   
-				 Actions act = new Actions(driver);
-				 act.moveToElement(driver.findElement(By.cssSelector("#title .icon-minimize"))).build().perform();
-				 Thread.sleep(2000);
-					WebElement chat1=driver.findElement(By.cssSelector("#title .icon-minimize"));
-					 Thread.sleep(1000);
-						chat1.click();
-						 Thread.sleep(1000);
-						 driver.switchTo().defaultContent();
-						 Thread.sleep(1000);
-						 driver.switchTo().parentFrame();
-					 Thread.sleep(1000);
-			}
-			else {
-				
-
-			System.out.println("chat window does not open");
-			}
-		}
-				catch(NoSuchElementException NCP) {
-					
-				}*/
-
-
-      
-		 WebElement delete_account = driver.findElement(By.xpath("//a[contains(text(),'Delete Account')]"));
+		 WebElement delete_account = driver.findElement(By.cssSelector("#clicking"));
 		js.executeScript("arguments[0].scrollIntoView();",delete_account);
 		 delete_account.click();
 		 Thread.sleep(3000);
@@ -294,15 +265,5 @@ public class Stripe_checkout extends Set{
 		delete_profile_coupon.click();
 		 Thread.sleep(3000);
 		
-		/*try {
-			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
-			if (logout.isEnabled()) {
-				logout.click();
-				Thread.sleep(8000);
-				driver.navigate().refresh();
-				Thread.sleep(2000);
-			}
-		} catch (NoSuchElementException Ext) {
-		}*/
 	}
 }
