@@ -194,7 +194,7 @@ public class Stripe_checkout extends Set{
 		Thread.sleep(2000);
 	         Stripe_card.sendKeys("4242424242424242");
 		Thread.sleep(5000);
-		     Stripe_card.clear();
+		   //  Stripe_card.clear();
 		  } catch( NoSuchElementException popup) { 
 	     }
                 Thread.sleep(5000);
