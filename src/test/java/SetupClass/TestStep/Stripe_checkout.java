@@ -15,7 +15,7 @@ import SetupClass.Set;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-public class co_checkout extends Set{
+public class Stripe_checkout extends Set{
 	
 
 	WebDriverWait wait = new WebDriverWait(driver,10);
@@ -173,13 +173,30 @@ public class co_checkout extends Set{
 	     try {
 		Thread.sleep(1400);
 		// select 2co option
-		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#tco_checkout")));
+		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#amasty_stripe")));
 		Thread.sleep(2000);
 	         co_btn.click();
 		Thread.sleep(5000);
 	     } catch( NoSuchElementException popup) { 
 	     }
+		WebElement Stripe_name  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#stripe-name")));
+		Thread.sleep(2000);
+	         Stripe_name.sendKeys("QA");
+		Thread.sleep(5000);
 		
+		
+		WebElement Stripe_email  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#stripe-email")));
+		Thread.sleep(2000);
+	         Stripe_name.sendKeys("sakshi.pathania@slidetech.in);
+		Thread.sleep(5000);
+		
+		
+		WebElement Stripe_card  = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#stripe-name")));
+		Thread.sleep(2000);
+	         Stripe_name.sendKeys('4242424242424242");
+		Thread.sleep(5000);
+		
+                
 		// place order button 
 		try {
 			
@@ -196,7 +213,7 @@ public class co_checkout extends Set{
 		
 	}
 
-	@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
+	/*@Then("^paypal popup appears and user navigates back to my account (\\d+)CO$")
 	public void paypal_popup_appears_and_user_navigates_back_to_my_account_CO(int arg1) throws Throwable {
 	    String co_page_title=driver.getTitle();
 		Thread.sleep(3000);
@@ -215,22 +232,22 @@ public class co_checkout extends Set{
 	    	log.info("USER IS ON THE WRONG PAGE");
 	    }
 		Thread.sleep(3000);
-	}
+	}*/
 
 	@Then("^user deleted the account (\\d+)CO$")
 	public void user_deleted_the_account_CO(int arg1) throws Throwable {
 			Thread.sleep(3000);
-	    driver.get("https://www.slideteam.net/");
-		Thread.sleep(2000);
+	  //  driver.get("https://www.slideteam.net/");
+	//	Thread.sleep(2000);
 		
 
-		/*driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
+		driver.findElement(By.xpath("//a[contains(.,'My Account')]")).click();
 		 Thread.sleep(3000);
 		 
 		
 
 
-try {
+/*try {
 			WebElement iframe = driver.findElement(By.id("livechat-full-view"));
 			if(iframe.isDisplayed()) {
 				driver.switchTo().frame(iframe);   
@@ -254,7 +271,7 @@ try {
 		}
 				catch(NoSuchElementException NCP) {
 					
-				}
+				}*/
 
 
       
@@ -277,7 +294,7 @@ try {
 		delete_profile_coupon.click();
 		 Thread.sleep(3000);*/
 		
-		try {
+		/*try {
 			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
 			if (logout.isEnabled()) {
 				logout.click();
@@ -286,6 +303,6 @@ try {
 				Thread.sleep(2000);
 			}
 		} catch (NoSuchElementException Ext) {
-		}
+		}*/
 	}
 }
