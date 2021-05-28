@@ -65,18 +65,18 @@ public class Google_new_user_sign_up extends Set {
 		WebElement gmail_email = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='identifierId']")));
 		Thread.sleep(2000);
 	    gmail_email.sendKeys("slidetech.qa@gmail.com");
-	    Thread.sleep(2000);
-	    WebElement next_1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[2]")));
-	    Thread.sleep(2000);
+	    Thread.sleep(5000);
+	    WebElement next_1 = driver.findElement(By.cssSelector("#identifierNext > div > button > span"));
+	    Thread.sleep(5000);
 	    next_1.click();
 	    Thread.sleep(2000);
 	    WebElement gmail_pass = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")));
 	    Thread.sleep(2000);
 	    gmail_pass.sendKeys("Himanshi@123");
-	    Thread.sleep(2000);
+	    Thread.sleep(5000);
 	    
-	    WebElement next_2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span")));
-	    Thread.sleep(2000);
+	    WebElement next_2 = driver.findElement(By.cssSelector("#passwordNext > div > button > span"));
+	    Thread.sleep(5000);
 	    next_2.click();
 	}
 
