@@ -17,7 +17,7 @@ import cucumber.api.java.en.Then;
 
 public class paypal_checkout extends Set {
 	
-	WebDriverWait wait = new WebDriverWait(driver,10);
+	WebDriverWait wait = new WebDriverWait(driver,40);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 	
 	@Given("^user is already on Website Home Page pp$")
@@ -268,10 +268,12 @@ public class paypal_checkout extends Set {
 	public void user_deleted_the_account_pp() throws Throwable {
 	   
 			Thread.sleep(3000);
-	    WebElement account = driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
+		
+		driver.get("https://www.slideteam.net/customer/account/");
+	    //WebElement account = driver.findElement(By.xpath("//a[contains(.,'My Account')]"));
 			  Thread.sleep(3000);
-			account.click();
-		 Thread.sleep(3000);
+			//account.click();
+		// Thread.sleep(3000);
 		 
 		
 
